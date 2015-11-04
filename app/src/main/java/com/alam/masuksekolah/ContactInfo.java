@@ -9,5 +9,5 @@ public class ContactInfo {
 
 
     protected static final String NAME_PREFIX = "Nama ";
-    protected static final String ALASAN_PREFIX = "Karena ";
+    protected static final String ALASAN_PREFIX = "Karena coba coba coba coba coba coba";
 }
