@@ -29,9 +29,7 @@ public class ContactAdapter extends RecyclerView.Adapter<ContactAdapter.ContactV
     public void onBindViewHolder(ContactViewHolder contactViewHolder, int i) {
         ContactInfo ci = contactList.get(i);
         contactViewHolder.vName.setText(ci.name);
-        contactViewHolder.vSurname.setText(ci.surname);
-        contactViewHolder.vEmail.setText(ci.email);
-        contactViewHolder.vTitle.setText(ci.name + " " + ci.surname);
+        contactViewHolder.vSurname.setText(ci.alasan);
     }
 
     @Override
@@ -47,15 +45,11 @@ public class ContactAdapter extends RecyclerView.Adapter<ContactAdapter.ContactV
 
         protected TextView vName;
         protected TextView vSurname;
-        protected TextView vEmail;
-        protected TextView vTitle;
 
         public ContactViewHolder(View v) {
             super(v);
             vName =  (TextView) v.findViewById(R.id.txtName);
             vSurname = (TextView)  v.findViewById(R.id.txtSurname);
-            vEmail = (TextView)  v.findViewById(R.id.txtEmail);
-            vTitle = (TextView) v.findViewById(R.id.title);
         }
     }
 }

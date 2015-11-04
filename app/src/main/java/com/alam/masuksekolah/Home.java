@@ -52,7 +52,7 @@ public class Home extends AppCompatActivity
         llm.setOrientation(LinearLayoutManager.VERTICAL);
         recList.setLayoutManager(llm);
 
-        ContactAdapter contactAdapter = new ContactAdapter(createList(10));
+        ContactAdapter contactAdapter = new ContactAdapter(createList(5));
         recList.setAdapter(contactAdapter);
     }
 
@@ -115,8 +115,7 @@ public class Home extends AppCompatActivity
         for (int i=1; i <= size; i++) {
             ContactInfo ci = new ContactInfo();
             ci.name = ContactInfo.NAME_PREFIX + i;
-            ci.surname = ContactInfo.SURNAME_PREFIX + i;
-            ci.email = ContactInfo.EMAIL_PREFIX + i + "@test.com";
+            ci.alasan = ContactInfo.ALASAN_PREFIX + i;
 
             result.add(ci);
 
