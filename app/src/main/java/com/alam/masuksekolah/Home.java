@@ -3,6 +3,8 @@ package com.alam.masuksekolah;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
+import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.RecyclerView;
 import android.view.View;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
@@ -12,6 +14,9 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class Home extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
@@ -40,6 +45,15 @@ public class Home extends AppCompatActivity
 
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
+
+        RecyclerView recList = (RecyclerView) findViewById(R.id.cardList);
+        recList.setHasFixedSize(true);
+        LinearLayoutManager llm = new LinearLayoutManager(this);
+        llm.setOrientation(LinearLayoutManager.VERTICAL);
+        recList.setLayoutManager(llm);
+
+        ContactAdapter contactAdapter = new ContactAdapter(createList(10));
+        recList.setAdapter(contactAdapter);
     }
 
     @Override
@@ -93,5 +107,21 @@ public class Home extends AppCompatActivity
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);
         return true;
+    }
+
+    private List<ContactInfo> createList(int size) {
+
+        List<ContactInfo> result = new ArrayList<ContactInfo>();
+        for (int i=1; i <= size; i++) {
+            ContactInfo ci = new ContactInfo();
+            ci.name = ContactInfo.NAME_PREFIX + i;
+            ci.surname = ContactInfo.SURNAME_PREFIX + i;
+            ci.email = ContactInfo.EMAIL_PREFIX + i + "@test.com";
+
+            result.add(ci);
+
+        }
+
+        return result;
     }
 }
