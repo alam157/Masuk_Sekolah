@@ -1,11 +1,15 @@
 package com.alam.masuksekolah;
 
+import android.graphics.drawable.Drawable;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.TextView;
 
+import java.io.InputStream;
+import java.net.URL;
 import java.util.List;
 
 /**
@@ -30,6 +34,8 @@ public class ContactAdapter extends RecyclerView.Adapter<ContactAdapter.ContactV
         ContactInfo ci = contactList.get(i);
         contactViewHolder.vName.setText(ci.name);
         contactViewHolder.vSurname.setText(ci.alasan);
+        contactViewHolder.vImage.setImageDrawable(ci.image);
+        contactViewHolder.vImage.setScaleType(ImageView.ScaleType.FIT_XY);
     }
 
     @Override
@@ -45,11 +51,13 @@ public class ContactAdapter extends RecyclerView.Adapter<ContactAdapter.ContactV
 
         protected TextView vName;
         protected TextView vSurname;
+        protected ImageView vImage;
 
         public ContactViewHolder(View v) {
             super(v);
             vName =  (TextView) v.findViewById(R.id.txtName);
             vSurname = (TextView)  v.findViewById(R.id.txtSurname);
+            vImage = (ImageView) v.findViewById(R.id.ivKonten);
         }
     }
 }
