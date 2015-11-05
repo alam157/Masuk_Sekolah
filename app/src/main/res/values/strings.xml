@@ -16,6 +16,12 @@
     </string>
     <string name="title_activity_home">Home</string>
 
+    <string name="hint_nama">Nama</string>
+    <string name="hint_terakhir_sekolah">Terakhir Sekolah</string>
+    <string name="hint_alasan">Alasan</string>
+    <string name="hint_lokasi">Location</string>
+    <string name="hint_photo">Picture</string>
+
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
 
