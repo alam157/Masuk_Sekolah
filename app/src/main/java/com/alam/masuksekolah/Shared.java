@@ -11,7 +11,7 @@ public class Shared extends AppCompatActivity{
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.card_share);
+        setContentView(R.layout.card_shared);
     }
 
     @Override
