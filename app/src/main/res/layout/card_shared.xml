@@ -5,6 +5,11 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:background="@android:color/darker_gray">
 
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/cardList"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"/>
+
     <android.support.v7.widget.CardView
         xmlns:card_view="http://schemas.android.com/apk/res-auto"
         xmlns:android="http://schemas.android.com/apk/res/android"
