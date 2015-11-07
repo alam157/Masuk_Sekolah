@@ -25,7 +25,8 @@
             android:theme="@style/AppTheme.NoActionBar" >
         </activity>
         <activity android:name=".Shared"
-            android:label="Masuk Sekolah">
+            android:label="Masuk Sekolah"
+            android:theme="@style/AppTheme.NoActionBar">
         </activity>
     </application>
 

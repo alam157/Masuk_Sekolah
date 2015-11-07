@@ -28,6 +28,7 @@ public class Login extends AppCompatActivity{
             @Override
             public void onClick(View arg0) {
                 Intent intent = new Intent(context, Home.class);
+                Login.this.finish();
                 startActivity(intent);
             }
         });
@@ -36,5 +37,10 @@ public class Login extends AppCompatActivity{
     @Override
     protected void onDestroy() {
         super.onDestroy();
+    }
+
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
     }
 }
