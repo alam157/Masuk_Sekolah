@@ -9,7 +9,8 @@ import android.graphics.drawable.Drawable;
 public class ContactInfo {
     protected String name;
     protected String alasan;
-    protected Drawable image;
+//    protected Drawable image;
+    protected Bitmap image;
 
 
     protected static final String NAME_PREFIX = "Nama ";

@@ -1,5 +1,7 @@
 package com.alam.masuksekolah;
 
+import android.util.Log;
+
 import java.io.IOException;
 import java.io.UnsupportedEncodingException;
 import java.util.List;
@@ -11,6 +13,7 @@ import cz.msebera.android.httpclient.client.methods.HttpGet;
 import cz.msebera.android.httpclient.client.methods.HttpPost;
 import cz.msebera.android.httpclient.client.utils.URLEncodedUtils;
 import cz.msebera.android.httpclient.impl.client.DefaultHttpClient;
+import cz.msebera.android.httpclient.protocol.HTTP;
 import cz.msebera.android.httpclient.util.EntityUtils;
 
 /**
@@ -21,6 +24,7 @@ public class ServiceHandler {
     static String response = null;
     public final static int GET = 1;
     public final static int POST = 2;
+    public final static int POST_IMAGE = 2;
 
     public ServiceHandler() {
 
@@ -57,6 +61,9 @@ public class ServiceHandler {
                     httpPost.setEntity(new UrlEncodedFormEntity(params));
                 }
 
+                Log.d("latitude", String.valueOf(params.get(4)));
+                Log.d("longtitude", String.valueOf(params.get(5)));
+
                 httpResponse = httpClient.execute(httpPost);
 
             } else if (method == GET) {
@@ -67,6 +74,8 @@ public class ServiceHandler {
                     url += "?" + paramString;
                 }
                 HttpGet httpGet = new HttpGet(url);
+
+                Log.d("URL : ", url);
 
                 httpResponse = httpClient.execute(httpGet);
 

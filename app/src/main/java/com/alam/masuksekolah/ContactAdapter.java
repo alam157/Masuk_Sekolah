@@ -34,7 +34,7 @@ public class ContactAdapter extends RecyclerView.Adapter<ContactAdapter.ContactV
         ContactInfo ci = contactList.get(i);
         contactViewHolder.vName.setText(ci.name);
         contactViewHolder.vSurname.setText(ci.alasan);
-        contactViewHolder.vImage.setImageDrawable(ci.image);
+        contactViewHolder.vImage.setImageBitmap(ci.image);
         contactViewHolder.vImage.setScaleType(ImageView.ScaleType.FIT_XY);
     }
 

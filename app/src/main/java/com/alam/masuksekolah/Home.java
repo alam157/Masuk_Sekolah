@@ -4,6 +4,7 @@ import android.app.ProgressDialog;
 import android.content.Context;
 import android.content.Intent;
 import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.graphics.drawable.Drawable;
 import android.os.AsyncTask;
 import android.os.Bundle;
@@ -25,6 +26,7 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import java.io.IOException;
 import java.io.InputStream;
 import java.net.URL;
 import java.util.ArrayList;
@@ -37,7 +39,7 @@ public class Home extends AppCompatActivity
     private Bitmap b;
 
     private static String url = "http://doroutdoor.com/hackathon/coba.php";
-    private static String urlimage = "http://doroutdoor.com/hackathon/img/";
+//    private static String urlimage = "http://1/hackathon/img/";
 
     JSONArray contacts = null;
 
@@ -81,6 +83,10 @@ public class Home extends AppCompatActivity
         new GetNews().execute();
     }
 
+    @Override
+    protected void onResume() {
+        super.onResume();
+    }
 
     @Override
     public void onBackPressed() {
@@ -175,22 +181,25 @@ public class Home extends AppCompatActivity
                     for (int i = 0; i < contacts.length(); i++) {
                         JSONObject c = contacts.getJSONObject(i).getJSONObject("post");
 
-                        String id = c.getString("id_anak");
                         String name = c.getString("nama");
                         String alasan = c.getString("alasan");
+                        String imagex = c.getString("image");
 
-                        Drawable drawable = LoadImageFromWebOperations(urlimage + id + ".jpg");
+                        Bitmap image = decodeBase64(imagex);
+//                        Drawable drawable = LoadImageFromWebOperations(urlimage + id + ".jpg");
 
                         ContactInfo ci = new ContactInfo();
                         ci.name = ContactInfo.NAME_PREFIX + name;
                         ci.alasan = ContactInfo.ALASAN_PREFIX + alasan;
-                        ci.image = drawable;
+                        ci.image = image;
 
                         result.add(ci);
 
 
                     }
                 } catch (JSONException e) {
+                    e.printStackTrace();
+                } catch (IOException e) {
                     e.printStackTrace();
                 }
             } else {
@@ -210,6 +219,7 @@ public class Home extends AppCompatActivity
 
             ContactAdapter contactAdapter = new ContactAdapter(result);
             recList.setAdapter(contactAdapter);
+
         }
     }
 
@@ -221,5 +231,10 @@ public class Home extends AppCompatActivity
         } catch (Exception e) {
             return null;
         }
+    }
+
+    public static Bitmap decodeBase64(String input) throws IOException {
+        byte[] decodedByte = Base64.decode(input, 0);
+        return BitmapFactory.decodeByteArray(decodedByte, 0, decodedByte.length);
     }
 }
