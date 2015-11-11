@@ -184,6 +184,10 @@ public class Home extends AppCompatActivity
                         String name = c.getString("nama");
                         String alasan = c.getString("alasan");
                         String imagex = c.getString("image");
+                        double lat = c.getDouble("latitude");
+                        double lng = c.getDouble("longtitude");
+                        String sekolah = c.getString("pend_terakhir");
+                        String lokasi = c.getString("lokasi");
 
                         Bitmap image = decodeBase64(imagex);
 //                        Drawable drawable = LoadImageFromWebOperations(urlimage + id + ".jpg");
@@ -192,6 +196,10 @@ public class Home extends AppCompatActivity
                         ci.name = ContactInfo.NAME_PREFIX + name;
                         ci.alasan = ContactInfo.ALASAN_PREFIX + alasan;
                         ci.image = image;
+                        ci.lat = lat;
+                        ci.lng = lng;
+                        ci.sekolah = sekolah;
+                        ci.lokasi = lokasi;
 
                         result.add(ci);
 
@@ -217,7 +225,7 @@ public class Home extends AppCompatActivity
             if (pDialog.isShowing())
                 pDialog.dismiss();
 
-            ContactAdapter contactAdapter = new ContactAdapter(result);
+            ContactAdapter contactAdapter = new ContactAdapter(result, Home.this);
             recList.setAdapter(contactAdapter);
 
         }

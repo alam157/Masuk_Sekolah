@@ -13,17 +13,134 @@
         xmlns:card_view="http://schemas.android.com/apk/res-auto"
         xmlns:android="http://schemas.android.com/apk/res/android"
         android:id="@+id/card_view_photo"
-        android:layout_width="160dp"
+        android:layout_width="240dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
         android:layout_marginLeft="6dp">
 
     <ImageView
-        android:layout_width="150dp"
+        android:layout_width="230dp"
         android:layout_height="150dp"
         android:layout_margin="5dp"
-        android:src="@drawable/putus_sekolah"/>
+        android:scaleType="fitXY"
+        android:src="@drawable/putus_sekolah"
+        android:id="@+id/ivAnak"/>
 
     </android.support.v7.widget.CardView>
 
+    <ScrollView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/map">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="10dp">
+
+        <ImageView
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:src="@drawable/ic_action_location_green"
+            android:id="@+id/ic_location"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Tebet"
+            android:textSize="20dp"
+            android:paddingBottom="9dp"
+            android:textColor="@android:color/black"
+            android:layout_toRightOf="@id/ic_location"
+            android:layout_alignBottom="@id/ic_location"
+            android:id="@+id/text_location"/>
+
+        <View
+            android:layout_width="fill_parent"
+            android:layout_height="2dp"
+            android:background="@android:color/darker_gray"
+            android:layout_below="@id/text_location"
+            android:layout_alignStart="@id/text_location"
+            android:layout_alignLeft="@id/text_location"/>
+
+        <ImageView
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:src="@drawable/ic_action_user_blue"
+            android:layout_below="@id/ic_location"
+            android:layout_marginTop="5dp"
+            android:id="@+id/ic_nama"
+            android:layout_alignLeft="@id/ic_location"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Firman Alamsyah"
+            android:textSize="20dp"
+            android:paddingBottom="7dp"
+            android:textColor="@android:color/black"
+            android:layout_toRightOf="@id/ic_nama"
+            android:layout_alignBottom="@id/ic_nama"
+            android:id="@+id/text_nama"/>
+
+        <View
+            android:layout_width="fill_parent"
+            android:layout_height="2dp"
+            android:background="@android:color/darker_gray"
+            android:layout_below="@id/text_nama"
+            android:layout_alignStart="@id/text_nama"
+            android:layout_alignLeft="@id/text_nama"/>
+
+        <ImageView
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:src="@drawable/ic_school"
+            android:layout_below="@id/ic_nama"
+            android:layout_marginTop="5dp"
+            android:id="@+id/ic_sekolah"
+            android:layout_alignLeft="@id/ic_location"
+            android:padding="5dp"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="SMK"
+            android:textSize="20dp"
+            android:paddingBottom="7dp"
+            android:textColor="@android:color/black"
+            android:layout_toRightOf="@id/ic_sekolah"
+            android:layout_alignBottom="@id/ic_sekolah"
+            android:id="@+id/text_sekolah"/>
+
+        <View
+            android:layout_width="fill_parent"
+            android:layout_height="2dp"
+            android:background="@android:color/darker_gray"
+            android:layout_below="@id/text_sekolah"
+            android:layout_alignStart="@id/text_nama"
+            android:layout_alignLeft="@id/text_nama"/>
+
+        <ImageView
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:src="@drawable/ic_action_sms"
+            android:layout_below="@id/ic_sekolah"
+            android:layout_marginTop="5dp"
+            android:id="@+id/ic_alasan"
+            android:layout_alignLeft="@id/ic_location"
+            android:padding="5dp"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Alasan"
+            android:textSize="20dp"
+            android:layout_marginTop="10dp"
+            android:textColor="@android:color/black"
+            android:layout_toRightOf="@id/ic_sekolah"
+            android:layout_alignTop="@id/ic_alasan"
+            android:id="@+id/text_alasan"/>
+
+    </RelativeLayout>
+    </ScrollView>
 </RelativeLayout>

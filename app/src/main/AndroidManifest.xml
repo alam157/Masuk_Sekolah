@@ -58,6 +58,9 @@
             android:label="Get Location"
             android:theme="@style/AppTheme.NoActionBar">
         </activity>
+        <activity android:name=".Detail"
+            android:label="MasukSekolah"
+            />
     </application>
 
 </manifest>

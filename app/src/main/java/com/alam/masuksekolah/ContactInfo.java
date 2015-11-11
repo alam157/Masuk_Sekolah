@@ -11,6 +11,10 @@ public class ContactInfo {
     protected String alasan;
 //    protected Drawable image;
     protected Bitmap image;
+    protected double lat;
+    protected double lng;
+    protected String sekolah;
+    protected String lokasi;
 
 
     protected static final String NAME_PREFIX = "Nama ";
