@@ -3,8 +3,11 @@ package com.alam.masuksekolah;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
+import android.net.Uri;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.view.View;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -25,6 +28,8 @@ public class Detail extends AppCompatActivity {
     ImageView vImage;
     Bitmap image;
 
+    Button showMaps;
+
     private GoogleMap mMap;
 
     @Override
@@ -37,6 +42,7 @@ public class Detail extends AppCompatActivity {
         lokasi = (TextView) findViewById(R.id.text_location);
         alasan = (TextView) findViewById(R.id.text_alasan);
         vImage = (ImageView) findViewById(R.id.ivAnak);
+        showMaps = (Button) findViewById(R.id.btn_show_maps);
 
         Intent intent = getIntent();
         Bundle bundle = intent.getExtras();
@@ -51,6 +57,15 @@ public class Detail extends AppCompatActivity {
         lng = bundle.getDouble("lng");
 
         setUpMapIfNeeded();
+
+        showMaps.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(android.content.Intent.ACTION_VIEW,
+                        Uri.parse("geo:0,0?q=" + String.valueOf(lat) + "," + String.valueOf(lng) + " (Lokasi Anak Tersebut)"));
+                startActivity(intent);
+            }
+        });
     }
 
     /**

@@ -141,6 +141,17 @@
             android:layout_alignTop="@id/ic_alasan"
             android:id="@+id/text_alasan"/>
 
+        <Button android:id="@+id/btn_show_maps"
+            android:layout_width="300dp"
+            android:layout_gravity="center_horizontal"
+            android:layout_centerHorizontal="true"
+            android:layout_height="wrap_content"
+            android:text="SHOW IN MAPS"
+            android:background="@color/colorPrimary"
+            android:layout_marginTop="40dp"
+            android:textColor="@android:color/white"
+            android:layout_below="@id/text_alasan"/>
+
     </RelativeLayout>
     </ScrollView>
 </RelativeLayout>

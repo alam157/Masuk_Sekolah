@@ -61,8 +61,8 @@ public class ServiceHandler {
                     httpPost.setEntity(new UrlEncodedFormEntity(params));
                 }
 
-                Log.d("latitude", String.valueOf(params.get(4)));
-                Log.d("longtitude", String.valueOf(params.get(5)));
+//                Log.d("latitude", String.valueOf(params.get(4)));
+//                Log.d("longtitude", String.valueOf(params.get(5)));
 
                 httpResponse = httpClient.execute(httpPost);
 

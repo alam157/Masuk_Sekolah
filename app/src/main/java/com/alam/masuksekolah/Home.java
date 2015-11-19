@@ -188,6 +188,11 @@ public class Home extends AppCompatActivity
                         double lng = c.getDouble("longtitude");
                         String sekolah = c.getString("pend_terakhir");
                         String lokasi = c.getString("lokasi");
+                        String strValid = c.getString("valid");
+                        Boolean isValid = false;
+                        if (strValid.equals("Y")){
+                            isValid = true;
+                        }
 
                         Bitmap image = decodeBase64(imagex);
 //                        Drawable drawable = LoadImageFromWebOperations(urlimage + id + ".jpg");
@@ -200,6 +205,7 @@ public class Home extends AppCompatActivity
                         ci.lng = lng;
                         ci.sekolah = sekolah;
                         ci.lokasi = lokasi;
+                        ci.isValid = isValid;
 
                         result.add(ci);
 

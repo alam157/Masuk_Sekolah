@@ -25,37 +25,51 @@
             android:orientation="vertical"
             android:paddingLeft="20dp"
             android:paddingRight="20dp"
-            android:paddingTop="120dp">
+            android:paddingTop="85dp">
 
-            <android.support.design.widget.TextInputLayout
-                android:id="@+id/input_layout_name"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content">
+            <com.github.florent37.materialtextfield.MaterialTextField
+                android:layout_width="300dp"
+                android:layout_gravity="center_horizontal"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="4dp"
+                android:layout_marginRight="4dp"
+                app:mtf_cardCollapsedHeight="4dp"
+                app:mtf_image="@drawable/ic_action_user"
+                >
 
                 <EditText
-                    android:id="@+id/input_name"
+                    android:id="@+id/input_user"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:singleLine="true"
                     android:hint="@string/hint_username" />
-            </android.support.design.widget.TextInputLayout>
+            </com.github.florent37.materialtextfield.MaterialTextField>
 
-            <android.support.design.widget.TextInputLayout
-                android:id="@+id/input_layout_email"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content">
+            <com.github.florent37.materialtextfield.MaterialTextField
+                android:layout_width="300dp"
+                android:layout_gravity="center_horizontal"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="4dp"
+                android:layout_marginRight="4dp"
+                app:mtf_cardCollapsedHeight="4dp"
+                android:layout_marginTop="5dp"
+                app:mtf_image="@drawable/ic_action_key"
+                >
 
                 <EditText
-                    android:id="@+id/input_email"
+                    android:id="@+id/input_pass"
+                    android:inputType="textPassword"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:inputType="textEmailAddress"
                     android:hint="@string/hint_password" />
-            </android.support.design.widget.TextInputLayout>
+            </com.github.florent37.materialtextfield.MaterialTextField>
 
             <Button android:id="@+id/btn_login"
-                android:layout_width="fill_parent"
+                android:layout_width="300dp"
+                android:layout_gravity="center_horizontal"
                 android:layout_height="wrap_content"
+                android:layout_marginLeft="4dp"
+                android:layout_marginRight="4dp"
                 android:text="@string/btn_sign_in"
                 android:background="@color/colorPrimary"
                 android:layout_marginTop="40dp"
@@ -66,13 +80,6 @@
                     android:layout_height="wrap_content"
                     android:layout_gravity="center">
 
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Do not have an account? "
-                        android:layout_marginTop="6dp"
-                        android:paddingLeft="60dp"
-                        android:paddingRight="6dp"/>
 
                     <TextView
                         android:layout_width="wrap_content"
@@ -81,7 +88,17 @@
                         android:layout_alignParentRight="true"
                         android:layout_marginTop="6dp"
                         android:textStyle="bold"
-                        android:paddingRight="60dp"/>
+                        android:paddingRight="45dp"
+                        android:id="@+id/btn_register"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Do not have an account? "
+                        android:layout_marginTop="6dp"
+                        android:paddingLeft="40dp"
+                        android:paddingRight="6dp"
+                        android:layout_toLeftOf="@id/btn_register"/>
 
                 </RelativeLayout>
         </LinearLayout>

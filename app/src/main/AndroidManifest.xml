@@ -61,6 +61,11 @@
         <activity android:name=".Detail"
             android:label="MasukSekolah"
             />
+        <activity android:name=".Register"
+            android:label="MasukSekolah"/>
+        <meta-data
+            android:name="io.fabric.ApiKey"
+            android:value="1fea4c41defaa7cb253b7ddadb5d75be28bd7b07" />
     </application>
 
 </manifest>

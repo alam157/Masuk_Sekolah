@@ -15,6 +15,7 @@ public class ContactInfo {
     protected double lng;
     protected String sekolah;
     protected String lokasi;
+    protected Boolean isValid;
 
 
     protected static final String NAME_PREFIX = "Nama ";

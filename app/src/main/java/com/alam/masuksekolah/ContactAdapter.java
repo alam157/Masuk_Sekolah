@@ -19,6 +19,8 @@ import java.io.InputStream;
 import java.net.URL;
 import java.util.List;
 
+import com.alam.masuksekolah.R;
+
 /**
  * Created by admin_tnss on 11/4/2015.
  */
@@ -45,6 +47,11 @@ public class ContactAdapter extends RecyclerView.Adapter<ContactAdapter.ContactV
         contactViewHolder.vSurname.setText(ci.alasan);
         contactViewHolder.vImage.setImageBitmap(ci.image);
         contactViewHolder.vImage.setScaleType(ImageView.ScaleType.FIT_XY);
+        if (ci.isValid){
+            contactViewHolder.vValid.setImageResource(R.drawable.ic_verified_user);
+        }else {
+            contactViewHolder.vValid.setImageResource(R.drawable.ic_error);
+        }
 
         contactViewHolder.btnDetail.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -84,6 +91,7 @@ public class ContactAdapter extends RecyclerView.Adapter<ContactAdapter.ContactV
         protected TextView vSurname;
         protected ImageView vImage;
         protected Button btnDetail;
+        protected ImageView vValid;
 
         public ContactViewHolder(View v) {
             super(v);
@@ -91,6 +99,7 @@ public class ContactAdapter extends RecyclerView.Adapter<ContactAdapter.ContactV
             vSurname = (TextView)  v.findViewById(R.id.txtSurname);
             vImage = (ImageView) v.findViewById(R.id.ivKonten);
             btnDetail = (Button) v.findViewById(R.id.btnDetail);
+            vValid = (ImageView) v.findViewById(R.id.icValid);
         }
     }
 }

@@ -18,6 +18,17 @@
             android:id="@+id/ivKonten"
             android:background="@drawable/putus_sekolah"/>
 
+        <ImageView
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:id="@+id/icValid"
+            android:layout_marginTop="24px"
+            android:layout_marginRight="5dp"
+            android:src="@drawable/ic_verified_user"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true"
+            android:layout_below="@id/ivKonten"/>
+
         <TextView
             android:id="@+id/txtName"
             android:layout_width="wrap_content"
